@@ -12,11 +12,11 @@ function Edit() {
         <input type="text" id="age" />
         <br></br>
         <br></br>
-        <label>Batch: </label>
+        <label>Course: </label>
         <input type="text" id="batch" />
         <br></br>
         <br></br>
-        <label>Course: </label>
+        <label>Batch: </label>
         <input type="text" id="course" />
         <br></br>
         <br></br>
