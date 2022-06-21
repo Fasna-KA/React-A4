@@ -1,4 +1,6 @@
 import React from 'react'
+import '../App.css'
+import { Link } from 'react-router-dom'
 
 function Student() {
   return (
@@ -8,30 +10,41 @@ function Student() {
   <h2>Students</h2>
   <br></br>
 
+  <Link to='/AddStudent'>
+  <button className='add'>Add Student</button>
+  </Link>
+
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">NAME</th>
+      <th scope="col">AGE</th>
+      <th scope="col">COURSE</th>
+      <th scope="col">BATCH</th>
+      <th scope="col">CHANGE</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">John</th>
+      <td>24</td>
+      <td>MERN</td>
+      <td>October</td>
+      <td><Link to = "/Edit">Edit</Link></td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">Mark</th>
+      <td>25</td>
+      <td>MERN</td>
+      <td>September</td>
+      <td><Link to = "/Edit">Edit</Link></td>
+
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">Mike</th>
+      <td>26</td>
+      <td>MERN</td>
+      <td>December</td>
+      <td><Link to = "/Edit">Edit</Link></td>
+
     </tr>
   </tbody>
 </table>  )
