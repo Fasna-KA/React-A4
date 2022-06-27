@@ -1,28 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { store } from './Detail'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
-function AddStudent() {
-  return (
-    <div style={{display:'flex', justifyContent:'center'}}>
-      <form style={{ marginTop: "25px" }}>
-        <label>Name: </label>
-        <input type="text" id="name" />
-        <br></br>
-        <br></br>
-        <label>Age:   </label>
-        <input type="text" id="age" />
-        <br></br>
-        <br></br>
-        <label>Course: </label>
-        <input type="text" id="batch" />
-        <br></br>
-        <br></br>
-        <label>Batch: </label>
-        <input type="text" id="course" />
-        <br></br>
-        <br></br>
-      <button>Submit</button>
-      <button>Cancel</button>
-      </form>
+
+const AddStudent = () => {
+const[Name,setName]=useState("")
+const[Age,setAge]=useState("")
+const[Course,setCourse]=useState("")
+const[Batch,setBatch]=useState("")
+const[students,setStudents]=useContext(store)
+
+
+const ChangeHandler1=(e)=>{setName(e.target.value)}
+const ChangeHandler2=(e)=>{setAge(e.target.value)}
+const ChangeHandler3=(e)=>{setCourse(e.target.value)}
+const ChangeHandler4=(e)=>{setBatch(e.target.value)}
+
+const SubmitHandler=()=>{
+setStudents([...students,{Name:Name,Age:Age,Course:Course,Batch:Batch,id:new Date().getTime().toString()}])
+} 
+
+ return (
+  <div style={{display:'flex', justifyContent:'center'}}>
+    <form style={{ marginTop: "25px" }}>
+      <label>Name:</label>
+          <input id="name" type="text" name='name' value={Name} onChange={ChangeHandler1} />
+          <label>Age:</label>
+          <input id="age" type="text" name='age' value={Age} onChange={ChangeHandler2} />
+          <label>Course:</label>
+          <input id="course" type="text" name='course' value={Course} onChange={ChangeHandler3} />
+          <label>Batch:</label>
+          <input id="batch" type="text" name='batch' value={Batch} onChange={ChangeHandler4} />
+      <div style={{ marginTop: "25px" }}>
+        <Link to="/student"><button style={{ marginLeft: "25px" }}>Cancel</button></Link>
+        <Link to="/student" onClick={SubmitHandler}><button>Submit</button></Link>
+      </div>      
+  </form>
     </div>
   )
 }
