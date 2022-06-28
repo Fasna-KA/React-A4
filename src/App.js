@@ -7,6 +7,7 @@ import Student from './Assignment4/Student';
 import Contact from './Assignment4/Contact';
 import Detail from './Assignment4/Detail';
 import AddStudent from './Assignment4/AddStudent';
+import Edit from './Assignment4/Edit';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/student' element={<Student/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
-        <Route path='/AddStudent' element={<AddStudent/>}></Route>
+        <Route path='/addStudent' element={<AddStudent/>}></Route>
+        <Route path='/edit/:id' element={<Edit/>}></Route>
       </Routes>
       
       </BrowserRouter>
